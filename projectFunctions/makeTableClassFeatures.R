@@ -1,5 +1,5 @@
 ## Author : Shaurya Jauhari
-## Last Reviewed: September 15th, 2020.
+## Last Reviewed: December 15th, 2020.
 ## Description: This function assembles together the data-matrix(coverage scores for all 
 ## features), corresponding intervals(bins), and the LR-hubs for each cell-type, and outputs
 ## a compound data-matrix for machine learning application.
@@ -21,8 +21,13 @@ makeTableClassFeatures <- function(cell){
   masterTable <- cbind(bins, scoreTable)
   
   ## Hubs
-  
-  library(dplyr)
+  requiredPackages <- c("dplyr")
+  newPackages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]
+  if(length(newPackages)) install.packages(newPackages,
+                                         repos = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/",
+                                         dependencies = TRUE)
+
+  suppressPackageStartupMessages(library(dplyr))
   hubs <- inner_join(masterTable, LRhubs)
   hubs$Class <- "Hub"
   

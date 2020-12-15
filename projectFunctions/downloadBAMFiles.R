@@ -1,5 +1,5 @@
 ## Author : Shaurya Jauhari
-## Last Reviewed: September 16th, 2020.
+## Last Reviewed: December 15th, 2020.
 ## Description: The function downloads the BAM data files associated with a particular feature of a cell-type as defined in the metadata table.
 ## The function boasts several checks for input parameters and successful file download. 
 
@@ -13,9 +13,9 @@ downloadBAMfiles <- function(cell, feature)
   
   ## Loading package libraries
   
-  library(curl)
-  library(readxl)
-  library(Rsamtools)
+  suppressPackageStartupMessages(library(curl))
+  suppressPackageStartupMessages(library(readxl))
+  suppressPackageStartupMessages(library(Rsamtools))
   
   ## Check if any or both arguments are missing.
   

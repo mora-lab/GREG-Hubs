@@ -43,8 +43,14 @@ postProcessBAMFiles <- function(cell)
     # (i) For each cell-type.
     # Merge all dataframes first and then remove the "chr", "start", and "end" columns.
 
-  library(plyr)
+  requiredPackages <- c("plyr")
+  newPackages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]
+  if(length(newPackages)) install.packages(newPackages,
+                                         repos = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/",
+                                         dependencies = TRUE)
 
+  suppressPackageStartupMessages(library(plyr))
+  
   combinedAvgReads <- join_all(selectAvgReads, by=c("X..chr.", "X.start.", "X.end."), type='left')
 
   # Since we no longer need the bins' attributes, we omit them here. However, we'll save these intervals for later use.

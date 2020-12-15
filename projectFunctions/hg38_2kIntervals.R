@@ -1,7 +1,10 @@
 ## Creating a background file for hg38 version of the human genome. The intervals are tiled in 2kb regions. 
 
-#BiocManager::install("BSgenome.Hsapiens.UCSC.hg38")
-library(BSgenome.Hsapiens.UCSC.hg38)
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("BSgenome.Hsapiens.UCSC.hg38")
+suppressPackageStartupMessages(library(BSgenome.Hsapiens.UCSC.hg38))
+
 si <- seqinfo(BSgenome.Hsapiens.UCSC.hg38)
 Bins2k <-  tileGenome(si, tilewidth = 2000, cut.last.tile.in.chrom = TRUE)
 targetBED <- as.data.frame(Bins2k)

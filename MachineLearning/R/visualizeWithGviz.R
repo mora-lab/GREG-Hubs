@@ -1,5 +1,5 @@
 ## Author : Shaurya Jauhari
-## Last Reviewed: September 27th, 2020.
+## Last Reviewed: December 11th, 2020.
 ## Description: This function generates chromosome-specific Gviz plots for the "Hubs" and "Non-hubs" (as defined), 
 ## and also writes them as external files, in addition to the true positives and true negatives.  
 
@@ -12,7 +12,7 @@ visualizeWithGviz <- function (cellLine, featureFile, chrName, chrIndex, startIn
   if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager", dependencies = TRUE)
   BiocManager::install("Gviz")
-  library(Gviz)
+  suppressPackageStartupMessages(library(Gviz))
   
   standardData <- read.table(featureFile, header = TRUE) ## full data
   fineData <- standardData[, c(as.numeric(chrIndex), as.numeric(startIndex), as.numeric(endIndex), as.numeric(classIndex))]
