@@ -5,4 +5,4 @@ See description of hubs: https://github.com/mora-lab/GREG-Hubs/tree/main/hub-des
 <br>
 See machine learning modeling of hubs: https://github.com/mora-lab/GREG-Hubs/tree/main/MachineLearning/workflows
 <br>
-* Last reviewed: March 2021
+*Last reviewed: March 2021*
