@@ -22,4 +22,7 @@ https://nbviewer.jupyter.org/github/mora-lab/GREG-Hubs/blob/main/MachineLearning
 Deep learning:<br>
 https://nbviewer.jupyter.org/github/mora-lab/GREG-Hubs/blob/main/MachineLearning/workflows/DeepLearningA549GREG.ipynb
 
-*Last reviewed: March 2021*
+Conclusions:<br>
+https://nbviewer.jupyter.org/github/mora-lab/GREG-Hubs/blob/main/MachineLearning/workflows/conclusions.ipynb
+
+*Last reviewed: March 2022*
